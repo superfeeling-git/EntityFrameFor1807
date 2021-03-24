@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="65047f1502b04b0183f4f0cb812955b2" Name="Diagram1">
+        <EntityTypeShape EntityType="erp_1807Model.Admin" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.Admin_Role" Width="1.5" PointX="10" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.AuditLog" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.Dict" Width="1.5" PointX="7.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.Menu" Width="1.5" PointX="7.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.OrderProduct" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.Product" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.Product_ProductProperty" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.ProductClass" Width="1.5" PointX="0.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.ProductOrder" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.ProductProperty" Width="1.5" PointX="3" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.Role_Menu" Width="1.5" PointX="10" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.Roles" Width="1.5" PointX="7.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.Storage" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.StorageLocation" Width="1.5" PointX="5.25" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.StorageRegion" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.StorageType" Width="1.5" PointX="1.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.Supplier" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.Supplier_ProductClass" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.Test" Width="1.5" PointX="9.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="erp_1807Model.View_Storage" Width="1.5" PointX="12.75" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="erp_1807Model.FK_Admin_Role_REFERENCE_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_AuditLog_REFERENCE_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_Admin_Role_REFERENCE_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_AuditLog_REFERENCE_ProductOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_Role_Menu_REFERENCE_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_OrderProduct_REFERENCE_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_OrderProduct_REFERENCE_ProductOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_Product_ProductProperty_REFERENCE_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_Product_REFERENCE_ProductClass" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_Product_ProductProperty_REFERENCE_ProductProperty" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_Supplier_ProductClass_REFERENCE_ProductClass" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_ProductOrder_REFERENCE_Storage" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_ProductOrder_REFERENCE_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_Role_Menu_REFERENCE_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_Storage_REFERENCE_StorageType" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_StorageRegion_REFERENCE_Storage" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_StorageLocation_REFERENCE_StorageRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="erp_1807Model.FK_Supplier_ProductClass_REFERENCE_Supplier" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
