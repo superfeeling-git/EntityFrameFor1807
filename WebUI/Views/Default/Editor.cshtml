@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>添加</title>
+    <script src="~/kindeditor/kindeditor-all.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+
+        $(function () {
+            var editor;
+            KindEditor.ready(function (K) {
+                var options = {
+                    width: '700px',
+                    height: '200px',
+                    //items: ['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', '|', 'code', 'cut', '/','copy', 'paste'],
+                    noDisableItems: ['source', '|', 'undo', 'redo', '|', 'preview'],
+                    filterMode: false,
+                    themeType: "simple",
+                    fullscreenMode: false,
+                    uploadJson: "@Url.Action("FileUpload")"
+                };
+
+                editor = K.create('textarea[name="content"]', options);
+                
+            });
+
+            $("button").click(function () {
+                    editor.sync();
+
+                    $.ajax({
+                    url: "@Url.Action()",
+                    type: "post",
+                    dataType: "json",
+                    data: { con: $("#content").val() },
+                    success: function (d) {
+                        console.log(d);
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <form>
+        <textarea name="content" id="content" style="width:800px;height:400px;visibility:hidden;"></textarea>
+
+        <button type="button">提交</button>
+    </form>
+</body>
+</html>

@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IServices", "IServices\ISer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{1D70B65B-4834-491F-B172-4D859DEA2941}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{AF0913B0-DB9D-430C-BCF3-5902D1889331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{5502BA0F-F3ED-4E48-8064-80958C0C2517}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{1D70B65B-4834-491F-B172-4D859DEA2941}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D70B65B-4834-491F-B172-4D859DEA2941}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D70B65B-4834-491F-B172-4D859DEA2941}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF0913B0-DB9D-430C-BCF3-5902D1889331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF0913B0-DB9D-430C-BCF3-5902D1889331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF0913B0-DB9D-430C-BCF3-5902D1889331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF0913B0-DB9D-430C-BCF3-5902D1889331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5502BA0F-F3ED-4E48-8064-80958C0C2517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5502BA0F-F3ED-4E48-8064-80958C0C2517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5502BA0F-F3ED-4E48-8064-80958C0C2517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5502BA0F-F3ED-4E48-8064-80958C0C2517}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

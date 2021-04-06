@@ -8,6 +8,8 @@ using IRepository;
 using Services.Base;
 using Domain;
 using IServices;
+using System.Linq.Expressions;
+using ViewModel;
 
 namespace Services
 {
@@ -18,6 +20,28 @@ namespace Services
             :base(_adminRepository)
         {
             this.adminRepository = _adminRepository;
+        }
+
+        public Tuple<IList<Admin>, int> GetListByPage(AdminQuery query, Expression<Func<Admin, int>> keySelector, int pageIndex = 1, int pageSize = 10)
+        {
+            var list = adminRepository.GetQuery();
+
+            if(!string.IsNullOrWhiteSpace(query.Keywords))
+            {
+                list = list.Where(m => m.UserName.Contains(query.Keywords));
+            }
+
+            if(query.StartTime != null)
+            {
+                list = list.Where(m => m.LastLoginTime > query.StartTime);
+            }
+
+            if (query.EndTime != null)
+            {
+                list = list.Where(m => m.LastLoginTime < query.EndTime);
+            }
+
+            return adminRepository.GetListByPage(list, keySelector, pageIndex, pageSize);
         }
     }
 }

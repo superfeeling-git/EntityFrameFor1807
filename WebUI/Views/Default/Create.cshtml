@@ -1,0 +1,60 @@
+﻿@model AdminModel
+@{
+    Layout = null;
+    ViewBag.Title = "Create";
+}
+
+<html>
+<head>
+    <title>添加</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript">
+        function SuccessFun(d) {
+            console.log(d);
+        }
+    </script>
+</head>
+<body>    
+    @using (Ajax.BeginForm("Create", new AjaxOptions { HttpMethod = "Post", OnSuccess = "SuccessFun" }))
+    {
+    <table class="layui-form">
+        <tr>
+            <td>用户名:</td>
+            <td>
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td>
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>末次时间:</td>
+            <td>
+                @Html.TextBoxFor(m => m.LastLoginTime)
+                @Html.ValidationMessageFor(m => m.LastLoginTime)
+            </td>
+        </tr>
+        <tr>
+            <td>末次IP:</td>
+            <td>
+                @Html.TextBoxFor(m => m.LastLoginIP)
+                @Html.ValidationMessageFor(m => m.LastLoginIP)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">提交</button>
+            </td>
+        </tr>
+    </table>
+    }
+</body>
+</html>

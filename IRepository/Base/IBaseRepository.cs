@@ -18,7 +18,9 @@ namespace IRepository.Base
         TEntity Find(int id);
         IList<TEntity> GetAll();
         IList<TEntity> GetList(Expression<Func<TEntity, bool>> predicate);
-        Tuple<IList<TEntity>, int> GetListByPage(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, int>> keySelector, int pageIndex = 1, int pageSize = 10);
+        Tuple<IList<TEntity>, int> GetListByPage(Expression<Func<TEntity, int>> keySelector, int pageIndex = 1, int pageSize = 10,params Expression<Func<TEntity, bool>>[] predicate);
         int Update(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, TEntity>> updateExpression);
+        IQueryable<TEntity> GetQuery();
+        Tuple<IList<TEntity>, int> GetListByPage(IQueryable<TEntity> entities, Expression<Func<TEntity, int>> keySelector, int pageIndex = 1, int pageSize = 10);
     }
 }

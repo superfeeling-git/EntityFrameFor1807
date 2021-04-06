@@ -111,6 +111,17 @@ namespace Services.Base
         /// <returns></returns>
         public virtual IList<TEntity> GetList(Expression<Func<TEntity, bool>> predicate)
         {
+            BinaryExpression exp = predicate.Body as BinaryExpression;
+
+            var left = exp.Left;
+
+            var right = exp.Right;
+
+            if(right != null)
+            {                
+                string value = Expression.Lambda(left).Compile().DynamicInvoke().ToString();
+            }
+
             return BaseRepository.GetList(predicate);
         }
 
@@ -119,9 +130,9 @@ namespace Services.Base
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        public virtual Tuple<IList<TEntity>, int> GetListByPage(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, int>> keySelector, int pageIndex = 1, int pageSize = 10)
+        public virtual Tuple<IList<TEntity>, int> GetListByPage(Expression<Func<TEntity, int>> keySelector, int pageIndex = 1, int pageSize = 10,params Expression<Func<TEntity, bool>>[] predicate)
         {
-            return BaseRepository.GetListByPage(predicate, keySelector, pageIndex, pageSize);
+            return BaseRepository.GetListByPage(keySelector, pageIndex, pageSize, predicate);
         }
         #endregion
     }

@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="~/LayUI/layuiAdmin/layuiadmin/layui/css/layui.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="demo1" style="width: 300px; margin: 20px;"></div>
+
+
+    <script src="~/LayUI/layuiAdmin/layuiadmin/layui/layui.js"></script>
+    <script type="text/javascript">
+        //加载组件
+        layui.config({
+            base: '/xm-select/dist/'
+        }).extend({
+            xmSelect: 'xm-select'
+        }).use(['xmSelect'], function () {
+            var xmSelect = layui.xmSelect;
+
+            //渲染多选
+            var demo1 = xmSelect.render({
+                el: '#demo1',
+                data: [
+                    { name: '张三', value: 1 },
+                    { name: '李四', value: 2 },
+                    { name: '王五', value: 3 },
+                ]
+            })
+
+        })
+    </script>
+</body>
+</html>
